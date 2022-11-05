@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Josefin Sans";
+    src: url("../public/fonts/JosefinSans-VariableFont_wght.ttf");
+  }
+
   html {
     @apply scroll-smooth;
   }

@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Josefin Sans";
-  src: local(""),
-    url("../public/fonts/JosefinSans-VariableFont_wght.ttf") format("ttf");
-  font-style: normal;
-  font-weight: 400;
-}
-
 @layer base {
+  @font-face {
+    font-family: "Josefin Sans";
+    src: url("../public/fonts/JosefinSans-VariableFont_wght.ttf")
+      format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+
   html {
     @apply scroll-smooth font-josefin;
   }

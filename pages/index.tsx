@@ -8,9 +8,7 @@ export default function Home() {
         <meta name="description" content="Digital Craftsman" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <h1 className="font-josefin">
-        HELLO THIS IS A MESSAGE FROM ONE ABOVE ALL
-      </h1>
+      <h1>HELLO THIS IS A MESSAGE FROM ONE ABOVE ALL</h1>
     </div>
   );
 }

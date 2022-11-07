@@ -5,10 +5,10 @@
 @layer base {
   @font-face {
     font-family: "Josefin Sans";
-    src: url("../public/fonts/JosefinSans-VariableFont_wght.ttf")
-      format("truetype");
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100 700;
+    font-display: optional;
+    src: url(/public/fonts/JosefinSans-VariableFont_wght.woff2) format("woff2");
   }
 
   html {

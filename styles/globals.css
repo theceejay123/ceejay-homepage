@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply tracking-wide;
+    @apply tracking-wide bg-primary bg-opacity-10 text-gray-700;
   }
 
   h1,
@@ -40,6 +40,6 @@
   }
 
   button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase;
+    @apply rounded uppercase;
   }
 }

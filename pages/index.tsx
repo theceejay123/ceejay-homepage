@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import Navigation from "../components/Navigation/Navigation.component";
+
 export default function Home() {
   return (
     <div>
@@ -8,7 +10,7 @@ export default function Home() {
         <meta name="description" content="Digital Craftsman" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <h1>HELLO THIS IS A MESSAGE FROM ONE ABOVE ALL</h1>
+      <Navigation />
     </div>
   );
 }

@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply tracking-wide bg-primary bg-opacity-10 text-gray-700;
+    @apply tracking-wide bg-primary bg-opacity-10 text-gray-900 dark:text-primary-100 dark:bg-black dark:marker:text-secondary-200 marker:text-secondary;
   }
 
   h1,

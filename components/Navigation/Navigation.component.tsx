@@ -56,7 +56,7 @@ const Navigation = ({ ...props }) => {
             <ol className="hidden md:flex list-decimal list-outside marker:text-secondary/70 items-center text-center">
               {listOfLinks.map((item, index) => (
                 <Link href={`/#${item.link}`} key={index}>
-                  <li className="ml-10 text-sm uppercase hover:scale-105 ease-in-out duration-300">
+                  <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
                     {item.title}
                   </li>
                 </Link>

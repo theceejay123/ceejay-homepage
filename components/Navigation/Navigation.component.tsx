@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
-import { useTheme } from "next-themes";
 
 import { CgMenuGridR } from "react-icons/cg";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
@@ -9,10 +8,9 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { Weblink } from "../../shared/models/Weblink.models";
 import Image from "next/image";
 
-const Navigation = () => {
-  const [isMounted, setIsMounted] = useState(false);
+const Navigation = ({ ...props }) => {
+  const { theme, setTheme, isMounted } = props;
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   const title = "Janeal Pimentel";
   const listOfLinks: Weblink[] = [
@@ -34,20 +32,9 @@ const Navigation = () => {
     }),
   ];
 
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   const handleMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
-
-  if (!isMounted) {
-    return null;
-  }
-
-  console.log("set it to twice in nav");
 
   return (
     <div className="sticky top-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-30">

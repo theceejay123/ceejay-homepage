@@ -63,16 +63,18 @@ const Navigation = ({ ...props }) => {
                   </li>
                 </Link>
               ))}
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
-              >
-                {theme === "dark" ? (
-                  <BsFillSunFill size={18} />
-                ) : (
-                  <BsFillMoonFill size={18} />
-                )}
-              </button>
+              {isMounted && (
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
+                >
+                  {theme === "dark" ? (
+                    <BsFillSunFill size={18} />
+                  ) : (
+                    <BsFillMoonFill size={18} />
+                  )}
+                </button>
+              )}
             </ol>
           </div>
           <div

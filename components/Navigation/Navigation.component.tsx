@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -9,8 +9,8 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { Weblink } from "../../shared/models/Weblink.models";
 import Image from "next/image";
 
-const Navigation = ({ ...props }) => {
-  const { isMounted } = props;
+const Navigation = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -34,9 +34,20 @@ const Navigation = ({ ...props }) => {
     }),
   ];
 
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const handleMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
+
+  if (!isMounted) {
+    return null;
+  }
+
+  console.log("set it to twice in nav");
 
   return (
     <div className="sticky top-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-30">

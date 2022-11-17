@@ -5,6 +5,7 @@ import { Navigation, Footer } from "@components";
 import { useTheme } from "next-themes";
 
 export default function Home() {
+  const { systemTheme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   // useEffect only runs on the client, so now we can safely show the UI
@@ -14,6 +15,7 @@ export default function Home() {
     if (!checkCleanup) {
       console.log("Client is now mounted. system theme applied!");
       setIsMounted(true);
+      setTheme(systemTheme ?? "dark");
     }
 
     return () => {

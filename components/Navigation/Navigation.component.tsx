@@ -1,39 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 
 import { CgMenuGridR } from "react-icons/cg";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
-import { Weblink } from "../../shared/models/Weblink.models";
-import Image from "next/image";
+import { Weblink } from "@models";
+import { NavigationMenuContext } from "@contexts";
+import { getWeblinks } from "@utils";
 
-const Navigation = ({ ...props }) => {
-  const { theme, setTheme, isMounted } = props;
-  const [menuOpen, setMenuOpen] = useState(false);
-
+const Navigation = () => {
+  const { theme, setTheme } = useTheme();
+  const { isMenuOpen, setIsMenuOpen } = useContext(NavigationMenuContext);
   const title = "Janeal Pimentel";
-  const listOfLinks: Weblink[] = [
-    new Weblink({
-      link: "about",
-      title: "About",
-    }),
-    new Weblink({
-      link: "experience",
-      title: "Experience",
-    }),
-    new Weblink({
-      link: "work",
-      title: "Work",
-    }),
-    new Weblink({
-      link: "view_source",
-      title: "View Source",
-    }),
-  ];
+  const listOfLinks: Weblink[] = getWeblinks();
 
   const handleMenuOpen = () => {
-    setMenuOpen(!menuOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -61,23 +46,21 @@ const Navigation = ({ ...props }) => {
                   </li>
                 </Link>
               ))}
-              {isMounted && (
-                <button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
-                >
-                  {theme === "dark" ? (
-                    <BsFillSunFill size={18} />
-                  ) : (
-                    <BsFillMoonFill size={18} />
-                  )}
-                </button>
-              )}
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
+              >
+                {theme === "dark" ? (
+                  <BsFillSunFill size={18} />
+                ) : (
+                  <BsFillMoonFill size={18} />
+                )}
+              </button>
             </ol>
           </div>
           <div
             onClick={handleMenuOpen}
-            className="md:hidden cursor-pointer hover:scale-105 ease-in duration-100 text-gray-900"
+            className="md:hidden cursor-pointer hover:scale-105 ease-in duration-100 text-gray-900 dark:text-primary-200"
           >
             <CgMenuGridR size={25} />
           </div>

@@ -6,7 +6,8 @@ import { useTheme } from "next-themes";
 import { NavigationMenuContextProvider } from "@contexts";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
+  const title = "Janeal Pimentel";
+  const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => setIsMounted(true), []);
@@ -24,8 +25,8 @@ export default function Home() {
             <meta name="description" content="Digital Craftsman" />
             <link rel="icon" href="favicon.ico" />
           </Head>
-          <NavigationMenu />
-          <Navigation />
+          <NavigationMenu title={title} />
+          <Navigation title={title} />
           <Footer />
         </div>
       </NavigationMenuContextProvider>

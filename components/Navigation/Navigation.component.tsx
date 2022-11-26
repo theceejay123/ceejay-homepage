@@ -11,10 +11,10 @@ import { Weblink } from "@models";
 import { NavigationMenuContext } from "@contexts";
 import { getWeblinks } from "@utils";
 
-const Navigation = () => {
+const Navigation = ({ ...props }) => {
   const { theme, setTheme } = useTheme();
   const { isMenuOpen, setIsMenuOpen } = useContext(NavigationMenuContext);
-  const title = "Janeal Pimentel";
+  const { title } = props;
   const listOfLinks: Weblink[] = getWeblinks();
 
   const handleMenuOpen = () => {

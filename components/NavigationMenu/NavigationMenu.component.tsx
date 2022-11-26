@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import { AiOutlineClose } from "react-icons/ai";
+import { HiExternalLink } from "react-icons/hi";
 
 import { NavigationMenuContext } from "@contexts";
 import { getWeblinks } from "@utils";
@@ -62,15 +63,31 @@ const NavigationMenu = ({ ...props }) => {
           <div className="pt-10">
             <ul>
               {listOfLinks.map((item, index) => (
-                <Link
-                  href={`/#${item.link}`}
-                  key={index}
-                  onClick={handleMenuOpen}
-                >
-                  <li className="py-4 text-lg sm:text-sm uppercase hover:scale-105 hover:underline transition-all">
-                    {item.title}
-                  </li>
-                </Link>
+                <>
+                  {index !== listOfLinks.length - 1 && (
+                    <Link
+                      href={`/#${item.link}`}
+                      key={index}
+                      onClick={handleMenuOpen}
+                    >
+                      <li className="py-4 text-lg sm:text-sm uppercase hover:scale-105 hover:underline transition-all">
+                        {item.title}
+                      </li>
+                    </Link>
+                  )}
+                  {index === listOfLinks.length - 1 && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <li className="group flex items-center justify-center py-4 text-lg sm:text-sm uppercase hover:scale-105 hover:underline transition-all">
+                        {item.title}
+                        <HiExternalLink />
+                      </li>
+                    </a>
+                  )}
+                </>
               ))}
             </ul>
           </div>

@@ -7,10 +7,14 @@ import { NavigationMenuContextProvider } from "@contexts";
 
 export default function Home() {
   const title = "Janeal Pimentel";
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => setIsMounted(true), []);
+  useEffect(() => {
+    setIsMounted(true);
+    setTheme("dark");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!isMounted) {
     return <div></div>;

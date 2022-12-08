@@ -7,12 +7,12 @@ import { NavigationMenuContextProvider } from "@contexts";
 
 export default function Home() {
   const title = "Janeal Pimentel";
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    setTheme("dark");
+    setTheme(resolvedTheme!);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

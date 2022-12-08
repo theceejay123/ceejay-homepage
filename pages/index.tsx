@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 
-import { Navigation, Footer, NavigationMenu } from "@components";
+import { Navigation, Footer, NavigationMenu, Homepage } from "@components";
 import { useTheme } from "next-themes";
 import { NavigationMenuContextProvider } from "@contexts";
 
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     theme && (
       <NavigationMenuContextProvider>
-        <div className="flex flex-col h-screen">
+        <div>
           <Head>
             <title>Janeal Pimentel</title>
             <meta name="description" content="Digital Craftsman" />
@@ -27,6 +27,7 @@ export default function Home() {
           </Head>
           <NavigationMenu title={title} />
           <Navigation title={title} />
+          <Homepage />
           <Footer />
         </div>
       </NavigationMenuContextProvider>

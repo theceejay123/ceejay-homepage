@@ -10,6 +10,7 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { Weblink } from "@models";
 import { NavigationMenuContext } from "@contexts";
 import { getWeblinks } from "@utils";
+import { HiExternalLink } from "react-icons/hi";
 
 const Navigation = ({ ...props }) => {
   const { theme, setTheme } = useTheme();
@@ -37,26 +38,45 @@ const Navigation = ({ ...props }) => {
               <span className="px-1 text-xl font-medium">{title}</span>
             </Link>
           </div>
-          <div>
-            <ol className="hidden md:flex list-decimal list-outside marker:text-secondary/70 items-center text-center">
+          <div className="hidden md:flex">
+            <ol className="flex list-decimal list-outside marker:text-secondary/70 items-center text-center">
               {listOfLinks.map((item, index) => (
-                <Link href={`/#${item.link}`} key={index}>
-                  <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
-                    {item.title}
-                  </li>
-                </Link>
+                <>
+                  {index !== listOfLinks.length - 1 && (
+                    <Link href={`/#${item.link}`} key={index}>
+                      <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
+                        {item.title}
+                      </li>
+                    </Link>
+                  )}
+                  {index === listOfLinks.length - 1 && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={index}
+                    >
+                      <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
+                        <span className="flex items-center justify-center">
+                          {item.title}
+                          <HiExternalLink />
+                        </span>
+                      </li>
+                    </a>
+                  )}
+                </>
               ))}
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
-              >
-                {theme === "dark" ? (
-                  <BsFillSunFill size={18} />
-                ) : (
-                  <BsFillMoonFill size={18} />
-                )}
-              </button>
             </ol>
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
+            >
+              {theme === "dark" ? (
+                <BsFillSunFill size={18} />
+              ) : (
+                <BsFillMoonFill size={18} />
+              )}
+            </button>
           </div>
           <div
             onClick={handleMenuOpen}

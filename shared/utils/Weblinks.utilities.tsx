@@ -14,7 +14,7 @@ export const getWeblinks = () => [
     title: "Work",
   }),
   new Weblink({
-    link: "https://github.com/theceejay123",
+    link: "https://github.com/theceejay123/ceejay-homepage",
     title: "View Source",
   }),
 ];

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -41,9 +41,9 @@ const Navigation = ({ ...props }) => {
           <div className="hidden md:flex">
             <ol className="flex list-decimal list-outside marker:text-secondary/70 items-center text-center">
               {listOfLinks.map((item, index) => (
-                <>
+                <Fragment key={index}>
                   {index !== listOfLinks.length - 1 && (
-                    <Link href={`/#${item.link}`} key={index}>
+                    <Link href={`/#${item.link}`}>
                       <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
                         {item.title}
                       </li>
@@ -54,7 +54,6 @@ const Navigation = ({ ...props }) => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      key={index}
                     >
                       <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
                         <span className="flex items-center justify-center">
@@ -64,7 +63,7 @@ const Navigation = ({ ...props }) => {
                       </li>
                     </a>
                   )}
-                </>
+                </Fragment>
               ))}
             </ol>
             <button

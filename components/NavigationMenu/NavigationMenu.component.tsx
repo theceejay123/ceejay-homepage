@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -63,13 +63,9 @@ const NavigationMenu = ({ ...props }) => {
           <div className="pt-10">
             <ul>
               {listOfLinks.map((item, index) => (
-                <>
+                <Fragment key={index}>
                   {index !== listOfLinks.length - 1 && (
-                    <Link
-                      href={`/#${item.link}`}
-                      key={index}
-                      onClick={handleMenuOpen}
-                    >
+                    <Link href={`/#${item.link}`} onClick={handleMenuOpen}>
                       <li className="py-4 text-lg sm:text-sm uppercase hover:scale-105 hover:underline transition-all">
                         {item.title}
                       </li>
@@ -87,7 +83,7 @@ const NavigationMenu = ({ ...props }) => {
                       </li>
                     </a>
                   )}
-                </>
+                </Fragment>
               ))}
             </ul>
           </div>

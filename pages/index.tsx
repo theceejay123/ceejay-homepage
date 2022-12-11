@@ -1,7 +1,13 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 
-import { Navigation, Footer, NavigationMenu, Homepage } from "@components";
+import {
+  Navigation,
+  Footer,
+  NavigationMenu,
+  Homepage,
+  About,
+} from "@components";
 import { useTheme } from "next-themes";
 import { NavigationMenuContextProvider } from "@contexts";
 
@@ -12,8 +18,6 @@ export default function Home() {
 
   useEffect(() => {
     setIsMounted(true);
-    setTheme(resolvedTheme!);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!isMounted) {
@@ -21,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    theme && (
+    resolvedTheme && (
       <NavigationMenuContextProvider>
         <div>
           <Head>
@@ -32,6 +36,7 @@ export default function Home() {
           <NavigationMenu title={title} />
           <Navigation title={title} />
           <Homepage />
+          <About />
           <Footer />
         </div>
       </NavigationMenuContextProvider>

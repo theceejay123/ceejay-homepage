@@ -39,7 +39,7 @@ const Homepage = () => {
         </div>
         <button
           onClick={handleClickGitHub}
-          className="mt-6 md:mt-8 lg:mt-12 px-4 py-2 text-md tracking-widest border border-secondary rounded-xl text-secondary dark:border-primary-200 dark:text-primary-200"
+          className="mt-6 md:mt-8 lg:mt-12 px-4 py-2 text-md tracking-widest border border-secondary rounded-xl text-secondary dark:border-primary-200 dark:text-primary-200 hover:scale-105 transition-all"
         >
           Check out my GitHub!
         </button>

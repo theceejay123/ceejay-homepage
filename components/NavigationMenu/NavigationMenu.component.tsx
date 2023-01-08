@@ -26,14 +26,14 @@ const NavigationMenu = ({ ...props }) => {
         onClick={handleMenuOpen}
         className={
           isMenuOpen
-            ? "md:hidden z-20 fixed right-0 top-0 w-full h-screen bg-neutral-900/70 transition-all"
+            ? "md:hidden z-20 fixed right-0 top-0 w-full h-screen bg-neutral-700/70 transition-all"
             : ""
         }
       ></div>
       <div
         className={
           isMenuOpen
-            ? "md:hidden z-20 rounded-l-xl shadow-xl shadow-secondary-400/70 fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-primary-100 dark:bg-zinc-900 dark:shadow-zinc-700 p-4 transition-all"
+            ? "md:hidden z-20 rounded-l-xl fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-primary-100 dark:bg-zinc-900 dark:shadow-zinc-700 p-4 transition-all"
             : "z-20 rounded-l-xl fixed right-[-100%] top-0 p-4 transition-all"
         }
       >

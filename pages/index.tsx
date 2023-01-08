@@ -13,7 +13,7 @@ import { NavigationMenuContextProvider } from "@contexts";
 
 export default function Home() {
   const title = "Janeal Pimentel";
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

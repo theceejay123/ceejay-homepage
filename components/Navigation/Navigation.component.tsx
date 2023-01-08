@@ -25,7 +25,7 @@ const Navigation = ({ ...props }) => {
   return (
     <div className="sticky top-0 z-10 backdrop-filter backdrop-blur-sm">
       <div className="h-14 max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+        <div className="flex justify-between items-center p-2 2xl:px-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
               <Image

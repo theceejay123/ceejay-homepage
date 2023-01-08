@@ -37,7 +37,7 @@ const NavigationMenu = ({ ...props }) => {
             : "z-20 rounded-l-xl fixed right-[-100%] top-0 p-4 transition-all"
         }
       >
-        <div className="flex w-full items-center justify-between">
+        <div className="flex items-center justify-between">
           <div
             onClick={handleMenuOpen}
             className="cursor-pointer text-xl hover:animate-wiggle p-2"

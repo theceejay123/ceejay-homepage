@@ -23,13 +23,13 @@ const Navigation = ({ ...props }) => {
   };
 
   return (
-    <div className="sticky top-0 z-10 backdrop-filter backdrop-blur-sm">
-      <div className="h-14 max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center p-2 2xl:px-16">
+    <div className="sticky top-0 z-10 backdrop-blur-sm backdrop-filter">
+      <div className="mx-auto h-14 max-w-7xl px-4">
+        <div className="flex items-center justify-between p-2 2xl:px-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="group flex items-center">
               <Image
-                className="w-5 inline-block transition-transform group-hover:rotate-[-20deg]"
+                className="inline-block w-5 transition-transform group-hover:rotate-[-20deg]"
                 src="/assets/ceejay_logo.svg"
                 alt="logo"
                 width={20}
@@ -39,12 +39,12 @@ const Navigation = ({ ...props }) => {
             </Link>
           </div>
           <div className="hidden md:flex">
-            <ol className="flex list-decimal list-outside marker:text-secondary/70 items-center text-center">
+            <ol className="flex list-outside list-decimal items-center text-center marker:text-secondary/70">
               {listOfLinks.map((item, index) => (
                 <Fragment key={index}>
                   {index !== listOfLinks.length - 1 && (
                     <Link href={`/#${item.link}`}>
-                      <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
+                      <li className="ml-10 text-sm uppercase transition-transform hover:scale-105">
                         {item.title}
                       </li>
                     </Link>
@@ -55,7 +55,7 @@ const Navigation = ({ ...props }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <li className="ml-10 text-sm uppercase hover:scale-105 transition-transform">
+                      <li className="ml-10 text-sm uppercase transition-transform hover:scale-105">
                         <span className="flex items-center justify-center">
                           {item.title}
                           <HiExternalLink />
@@ -68,7 +68,7 @@ const Navigation = ({ ...props }) => {
             </ol>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-5 text-sm text-secondary rounded-md dark:text-primary-200 border-[1.5px] border-secondary dark:border-primary-200 hover:animate-wiggle p-1.5 transition-all"
+              className="ml-5 rounded-md border-[1.5px] border-secondary p-1.5 text-sm text-secondary transition-all hover:animate-wiggle dark:border-primary-200 dark:text-primary-200"
             >
               {theme === "dark" ? (
                 <BsFillSunFill size={18} />
@@ -79,7 +79,7 @@ const Navigation = ({ ...props }) => {
           </div>
           <div
             onClick={handleMenuOpen}
-            className="md:hidden cursor-pointer hover:scale-105 ease-in duration-100 text-gray-900 dark:text-primary-200"
+            className="cursor-pointer text-gray-900 duration-100 ease-in hover:scale-105 dark:text-primary-200 md:hidden"
           >
             <CgMenuGridR size={25} />
           </div>

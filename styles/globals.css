@@ -11,11 +11,11 @@
   }
 
   html {
-    @apply scroll-smooth font-roboto font-light text-base;
+    @apply scroll-smooth font-roboto text-base font-light;
   }
 
   body {
-    @apply tracking-wide bg-primary-100 text-gray-900 dark:text-primary-100 dark:bg-zinc-900 dark:marker:text-secondary-200 marker:text-secondary;
+    @apply bg-primary-100 tracking-wide text-gray-900 marker:text-secondary dark:bg-zinc-900 dark:text-primary-100 dark:marker:text-secondary-200;
   }
 
   h1,
@@ -41,5 +41,15 @@
 
   button {
     @apply rounded uppercase;
+  }
+
+  .hover-underline {
+    @apply relative inline-block;
+    @apply after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-left after:scale-x-0 after:bg-secondary-400 after:transition-transform after:ease-out after:content-[""];
+    @apply hover:after:origin-bottom-left hover:after:scale-x-[1];
+  }
+
+  .btn-primary {
+    @apply underline;
   }
 }

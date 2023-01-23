@@ -13,7 +13,7 @@ import { getWeblinks } from "@utils";
 import { HiExternalLink } from "react-icons/hi";
 
 const Navigation = ({ ...props }) => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const { isMenuOpen, setIsMenuOpen } = useContext(NavigationMenuContext);
   const { title } = props;
   const listOfLinks: Weblink[] = getWeblinks();
@@ -67,10 +67,12 @@ const Navigation = ({ ...props }) => {
               ))}
             </ol>
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() =>
+                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+              }
               className="ml-5 rounded-md border-[1.5px] border-secondary p-1.5 text-sm text-secondary transition-all hover:animate-wiggle dark:border-primary-200 dark:text-primary-200"
             >
-              {theme === "dark" ? (
+              {resolvedTheme === "dark" ? (
                 <BsFillSunFill size={18} />
               ) : (
                 <BsFillMoonFill size={18} />

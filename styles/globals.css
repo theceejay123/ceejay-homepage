@@ -43,13 +43,15 @@
     @apply rounded uppercase;
   }
 
+  /* CUSTOM CSS CONFIGURATIONS */
+
   .hover-underline {
     @apply relative inline-block;
-    @apply after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-left after:scale-x-0 after:bg-secondary-400 after:transition-transform after:ease-out after:content-[""];
+    @apply after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-left after:scale-x-0 after:transition-transform after:ease-out after:content-[""];
     @apply hover:after:origin-bottom-left hover:after:scale-x-[1];
   }
 
-  .btn-primary {
-    @apply underline;
+  .btn {
+    @apply rounded border-2 border-gray-900 py-2 px-4 text-base dark:border-primary-100 sm:text-sm;
   }
 }

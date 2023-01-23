@@ -90,7 +90,7 @@ const NavigationMenu = ({ ...props }) => {
           <div className="pt-40 transition-all sm:pt-10">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="btn-primary"
+              className="btn"
             >
               Switch to {theme === "dark" ? "light" : "dark"} mode
             </button>

@@ -24,16 +24,18 @@ const Homepage = () => {
         <h1 className="pb-2 text-4xl tracking-normal text-secondary-200 dark:text-primary md:text-6xl lg:text-8xl">
           I build things for the web
         </h1>
-        <div className="max-w-xl pt-4 dark:text-slate-300 md:max-w-2xl">
+        <div className="max-w-xl pt-4 text-gray-600 dark:text-gray-200 md:max-w-2xl">
           <p className="">
             {shortBio}
             <a
               href="https://norimaconsulting.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer text-secondary-400 dark:text-primary-200"
+              className="cursor-pointer text-secondary dark:text-primary-300"
             >
-              <span className="hover-underline">Norima Consulting</span>
+              <span className="hover-underline after:bg-secondary after:dark:bg-primary-300">
+                Norima Consulting
+              </span>
             </a>
           </p>
         </div>
